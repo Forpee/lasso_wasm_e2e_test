@@ -1,0 +1,22 @@
+[package]
+name = "lasso_wasm_e2e_test"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+getrandom = { version = "0.2", features = ["js"] }
+wasm-bindgen = "0.2"
+ark-lasso = { path = "./Lasso" }
+wasm-bindgen-test = "0.3.39"
+ark-curve25519 = "0.4.0"
+merlin = "3.0.0"
+ark-std = { version = "0.4.0", default-features = false }
+
+[profile.dev]
+opt-level = 1
+incremental = true
